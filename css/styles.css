@@ -71,19 +71,60 @@ body{
   position: relative;
   width: 13rem;
   height: 100%;
-  border: .1rem solid var(--text-color);
-  border-radius: 1rem;
   letter-spacing: .1rem;
-  padding: .3rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.navbar a.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--text-color);
+  border-radius: 2rem;
+  z-index: -1;
+  transition: .5s;
+}
+
+.navbar a.main:hover::before{
+  width: 100%;
+}
+
+.navbar a.main:hover{
+  color: var(--bg-color);
+}
+
+.navbar a.main:hover{
+  color: var(--bg-color);
 }
 
 .navbar .login {
   border: none;
+  color: var(--secondary-bg-color);
 }
 
-.navbar .register {
-  background: white;
-  color: black;
+.navbar .signup {
+  position: relative;
+  background: var(--secondary-bg-color);
+  color: var(--bg-color);
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.navbar .signup:hover{
+  background-color: var(--bg-color);
+  color: var(--secondary-bg-color);
+}
+
+.navbar .active {
+  background: var(--text-color);
+  color: var(--bg-color);
 }
 
 #menu-icon {
@@ -96,7 +137,7 @@ body{
 /* Home section */
 
 section {
-  min-height: 120vh;
+  min-height: 100vh;
   padding: 10rem 9% 2rem;
 }
 
@@ -112,7 +153,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -152,6 +193,13 @@ section {
   font-size: 2rem;
   font-weight: 800;
   z-index: 2;
+  width: 20rem;
+  height: 100%;
+  text-align: center;
+}
+
+.btn-box .btn:hover{
+  background: var(--secondary-bg-color);
 }
 
 .home-sm {
@@ -167,4 +215,102 @@ section {
   margin: 5rem 0 1rem 0;
   color: white;
   z-index: 2;
+}
+
+.home-sm a:hover{
+  color: var(--secondary-bg-color);
+}
+
+/* sign up page */
+
+.home .sign {
+  position: relative;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 50px 200px 19px;
+  z-index: 2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.home .sign .signup-topic {
+  display: flex;
+  justify-content: center;
+}
+
+.home .sign .signup-topic a {
+  width: 10rem;
+}
+
+.home .sign .first {
+  z-index: 4;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.home .sign .signup2 {
+  color: var(--secondary-bg-color);
+  font-size: 6rem;
+  padding-left: 1px;
+  font-weight: 500;
+  height: 5rem;
+}
+
+.home .sign .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .sign .form .input-box {
+  position: relative; 
+  width: 30rem;
+  height: 40px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 40px;
+  font-size: 16px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: white;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.home .sign .form .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input{
+  accent-color: white;
+  margin-right: none;
+}
+
+.remember-forgot a {
+  color: white;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
 }
