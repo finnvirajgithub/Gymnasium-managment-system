@@ -18,20 +18,24 @@
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
-    <nav class="navbar">
-      <a href="#home" >HOME</a>
-      <a href="#about" class="main">ABOUT</a>
-      <a href="#services" class="main">SERVICES</a>
-      <a href="#contact" class="main">CONTACT</a>  
-      <a href="#log in" class="login">LOG IN</a>
-      <a href="#signup" class="active" class="signup">SIGN UP</a>
-    </nav>
+    <div class="nav-links" id="navLinks">
+      <i class="bx bx-x" onclick="hideMenu()"></i>
+
+      <ul>
+        <li><a href="/index.html">HOME</a></li>
+        <li><a href="/about.html">ABOUT</a></li>
+        <li><a href="/services.html">SERVICES</a></li>
+        <li><a href="/contact.html">CONTACT</a></li>
+        <li><a href="/login.html">LOG IN</a></li>
+        <li class="active"><a href="/signup.html">REGISTER</a></li>
+      </ul>
+    </div>
   </header>
 
   <!---------------------------------------------------------------------------------------->
   <!-- Home section design-->
 
-  <section class="home">
+  <section class="sign-up">
     <div class="sign">
       <div class="signup-topic">
         <a href="#" class="logo"><p class="first">THRUSH</p><p class="second">FITNESS</p></a>
@@ -63,11 +67,7 @@
       
     </div>
 
-    <div class="home-sm">
-      <a href="#"><i class='bx bxl-facebook'></i></a>
-      <a href="#"><i class='bx bxl-instagram' ></i></a>
-      <a href="#"><i class='bx bxl-twitter'></i></a>
-    </div>
+    
   </section>
 </body>
 </html>
