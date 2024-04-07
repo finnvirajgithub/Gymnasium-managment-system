@@ -7,6 +7,8 @@ connect.then(() => {
     console.log("Failed to connect");
 })
 
+
+//user login
 const LogInSchema = new mongoose.Schema({
     username:{
         type:String,
@@ -20,4 +22,27 @@ const LogInSchema = new mongoose.Schema({
 
 const collection = new mongoose.model("LogInCollection",LogInSchema)
 
+//user responds
+const RespondsSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    phone:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    message:{
+        type:String,
+        required:true
+    }
+})
+
+const collection1 = new mongoose.model("RespondsCollection",RespondsSchema)
+
 module.exports=collection
+module.exports=collection1

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-boX;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-color:rgb(0, 0, 0);
+  --secondary-bg-color:yellow;
+  --text-color:white;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  width: 170px;
+}
+
+.logo .first {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.logo .second {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-color);
+  letter-spacing: 0.7rem;
+  padding-top: 0px;
+  margin-top: 0px;
+  border-top: 0px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--secondary-bg-color);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links .active::after {
+  width: 100%;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+
+#menu-icon {
+  font-size: 3.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none;
+}
+
+#close-icon{
+  display: none;
+}
+
+/* Home section */
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+/* .home, .about-h, .about, .sign-up, .services, .contact, .store{
+  background: url(/images/main/group-young-people-training-gym-indoors-maintaining-sportive-lifestyle.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} */
+
+.home-content ,
+.btn-box{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-box .btn{
+  margin-top: 2rem;
+  background: var(--text-color);
+  color: black;
+  padding: .5rem 2rem;
+  border-radius: .8rem;
+  font-size: 2rem;
+  font-weight: 800;
+  z-index: 2;
+  width: 20rem;
+  height: 100%;
+  text-align: center;
+}
+
+.btn-box .btn:hover{
+  background: var(--secondary-bg-color);
+}
+
+/* .store::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: 1;
+  background: rgba(0, 0 , 0 , 0.6);
+} */
+
+i {
+  z-index: 200;
+}
+
+.container{
+  max-width: 1068px;
+  margin: auto;
+  width: 100%;
+}
+
+.header-2 {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  box-shadow: hsla(0, 0, 98%, 0.1);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo{
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+#cart-icon {
+  position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#cart-icon[data-quantitiy]::after{
+  content: "";
+}
+
+#cart-icon[data-quantitiy]::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  background: green;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

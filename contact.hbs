@@ -44,17 +44,19 @@
       </div>
       
       <div class="form">
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          
+          <input type="hidden" name="access_key" value="338c831b-f278-488f-b745-14ea3b859c56">
           <div class="input-box">
-            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" name="Name" id="name" placeholder="Name" required>
           </div>
 
           <div class="input-box">
-            <input type="text" id="phone" placeholder="Phone" required></i>
+            <input type="text" name="Phone" id="phone" placeholder="Phone" required></i>
           </div>
           
           <div class="input-box">
-            <input type="email" id="email" placeholder="Email" required>
+            <input type="email" name="Email" id="email" placeholder="Email" required>
             <i class="bx bxs-user"></i>
           </div>
           
@@ -63,27 +65,11 @@
           </div>
 
           <div class="btn-box">
-            <a href="#" class="btn">Send</a>
+            <button type="submit" class="btn">Send</button>
           </div>
         </form>
       </div>
     </div>
   </section>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script>
-    function sendEmail(){
-        Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "username",
-            Password : "password",
-            To : 'them@website.com',
-            From : document.getElementById('email').value,
-            Subject : "New enquiry",
-            Body : "Name : " + document.getElementById("name").value + "<br> Email : " + document.getElementById("email").value + "<br> Phone : " + document.getElementById("phone").value + "<br> Message : " + document.getElementById("message").value
-        }).then(
-        message => alert("Message sent succesfully.")
-        );
-    }
-  </script>
 </body>
 </html>

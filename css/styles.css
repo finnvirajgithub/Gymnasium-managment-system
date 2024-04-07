@@ -573,6 +573,16 @@ img {
   }
 }
 
+/* -----------------store------------------------ */
+
+.header-2{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
