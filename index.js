@@ -3,8 +3,9 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const bcrypt = require("bcrypt");
-const collection = require("./src/mongodb");
-const collection1 = require("./src/mongodb");
+const mongoose = require("./src/mongodb")
+const collection = require("./src/signup");
+const collection1 = require("./src/responds");
 
 const templatePaths = path.join(__dirname,'');
 
@@ -71,14 +72,14 @@ app.post("/signup",async (req,res)=> {
 
 //code for collection responds
 app.post("/contact",async (req,res) => {
-    const data = {
-        name:req.body.Name,
-        phone:req.body.Phone,
-        email:req.body.Email,
+    const data1 = {
+        name:req.body.name,
+        phone:req.body.phone,
+        email:req.body.email,
         message:req.body.message
     }
 
-    const responds = await collection1.insertMany(data);
+    const responds = await collection1.insertMany(data1);
     console.log(responds);
 
     res.render("contact");
