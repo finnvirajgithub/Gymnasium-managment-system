@@ -294,7 +294,7 @@ section {
   border: none;
   outline: none;
   border: 2px solid white;
-  border-radius: 40px;
+  border-radius: 10px;
   font-size: 16px;
   color: white;
   padding: 20px 40px 20px 20px;
@@ -317,6 +317,7 @@ section {
   justify-content: space-between;
   font-size: 14.5px;
   margin: -15px 0 15px;
+  color: white;
 }
 
 .remember-forgot label input{
@@ -331,6 +332,26 @@ section {
 
 .remember-forgot a:hover {
   text-decoration: underline;
+}
+
+.sign-up .sign .form .no-account {
+  display: flex;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.no-account a {
+  color: yellow;
+  text-decoration: underline;
+}
+
+.no-account p {
+  padding-right: 5px;
+  color: white;
+}
+
+.no-account{
+  padding-top: 10px;
 }
 
 /* log in page */

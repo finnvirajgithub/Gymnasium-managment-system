@@ -40,6 +40,24 @@
               <a href="#" class="logo">Store</a>
               <!-- cart icon -->
               <i class='bx bxs-shopping-bag' id="cart-icon" data-quantitiy="0"></i>
+
+              {{!-- cart --}}
+
+              <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                {{!-- content --}}
+                <div class="cart-content"></div>
+
+                {{!-- total --}}
+                <div class="total">
+                  <div class="total-title">Total</div>
+                  <div class="total-price">$0</div>
+                </div>
+
+                {{!-- buy button --}}
+                <button type="button" class="btn-buy">Pay Now</button>
+                <i class="bx bx-x" id="close-cart"></i>
+              </div>
             </div>
         </header>    
     
