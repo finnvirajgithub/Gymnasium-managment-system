@@ -15,7 +15,13 @@ app.set("view engine","hbs");
 app.set("views",templatePaths);
 app.use(express.urlencoded({extended:false}));
 
+
+// routing
 app.get("/",(req,res) => {
+    res.render("index")
+})
+
+app.get("/index",(req,res) => {
     res.render("index")
 })
 
