@@ -23,8 +23,22 @@ html {
 }
 
 body{
-    background: var(--bg-color);
+  background: url(/images/main/group-young-people-training-gym-indoors-maintaining-sportive-lifestyle.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text-color);
+}
+
+.store::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: 1;
+  background: rgba(0, 0 , 0 , 0.6);
 }
 
 .header {
@@ -34,6 +48,7 @@ body{
   width: 100%;
   padding: 2rem 9%;
   background: transparent;
+  opacity: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,7 +129,7 @@ body{
 /* Home section */
 
 section {
-  min-height: 100vh;
+  min-height: 10vh;
   padding: 10rem 9% 2rem;
 }
 
@@ -164,6 +179,10 @@ i {
   z-index: 200;
 }
 
+section .store {
+  min-height: 10px;
+}
+
 .container{
   max-width: 1068px;
   margin: auto;
@@ -175,7 +194,7 @@ i {
   top: 80px;
   left: 0;
   width: 100%;
-  box-shadow: hsla(0, 0, 98%, 0.1);
+  box-shadow: 0 1px 4px hsla(0, 0%, 98%, 0.1);
   z-index: 100;
 }
 
@@ -232,12 +251,13 @@ i {
   background: white;
   box-shadow: -2px 0 4px hsl(0, 4%, 15% / 10%);
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  z-index: 200;
+  z-index: 500;
 }
 
 .cart.active{
   right: 0;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 500;
 }
 
 .cart-title {
@@ -245,14 +265,14 @@ i {
   font-size: 2rem;
   font-weight: 600;
   margin-top: 0.5rem;
-  color: orange;
+  color: darkblue;
 }
 
 .total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
-  border-top: 1px solid orange;
+  border-top: 1px solid darkblue;
   font-size: 1rem;
 }
 
@@ -278,8 +298,8 @@ i {
   text-align: center;
   border: none;
   border-radius: 2rem;
-  background: green;
-  color: white;
+  background: yellow;
+  color: black;
   font-size: 1rem;
   font-style: italic;
   font-weight: 500;
@@ -291,7 +311,7 @@ i {
   top: 1rem;
   right: 0.8rem;
   font-size: 2rem;
-  color: orange;
+  color: darkblue;
   cursor: pointer;
 }
 
@@ -331,7 +351,7 @@ i {
 }
 
 .cart-quantity {
-  border: 1px solid orange;
+  border: 1px solid darkblue;
   outline-color: darkblue;
   width: 2.8rem;
   text-align: center;
@@ -341,6 +361,81 @@ i {
 
 .cart-remove {
   font-size: 24px;
-  color: orange;
+  color: darkblue;
   cursor: pointer;
+}
+
+.shop-container{
+  padding-top: 3rem;
+}
+
+.section-title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  margin-top: 2rem;
+  z-index: 300;
+}
+
+.shop {
+  margin-top: 3rem;
+}
+
+.product-img {
+  height: 220px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.shop-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit , minmax(200px, auto));
+  gap: 1.5rem;
+}
+
+.product-box {
+  position: relative;
+  background: #2d2e37;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 2;
+}
+
+.product-box:hover {
+  background: rgb(37, 36, 43); 
+  border: 1px solid yellow;
+  box-shadow: 0 8px 32px hsla(0.75, 0.82, 0.165, 1);
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.product-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.add-cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: yellow;
+  color: black;
+  padding: 10px;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add-cart:hover{
+  background: rgb(155, 155, 9);
 }
