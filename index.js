@@ -49,6 +49,14 @@ app.get("/store",(req,res) => {
     res.render("store")
 })
 
+app.get("/success",(req,res) => {
+    res.render("success")
+})
+
+app.get("/cancel",(req,res) => {
+    res.render("cancel")
+})
+
 //code for signup
 app.post("/signup",async (req,res)=> {
     const data = {
