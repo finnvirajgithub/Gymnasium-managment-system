@@ -228,12 +228,12 @@ section .store {
   cursor: pointer;
 }
 
-#cart-icon[data-quantitiy]::after{
+#cart-icon[data-quantity = "0"]::after{
   content: "";
 }
 
-#cart-icon[data-quantitiy]::after{
-  content: "";
+#cart-icon[data-quantity]::after{
+  content: attr(data-quantity);
   position: absolute;
   top: 0;
   right: -12px;

@@ -39,7 +39,7 @@
             <div class="nav container">
               <a href="#" class="logo">Store</a>
               <!-- cart icon -->
-              <i class='bx bxs-shopping-bag' id="cart-icon" data-quantitiy="0"></i>
+              <i class='bx bxs-shopping-bag' id="cart-icon" data-quantity="0"></i>
 
               {{!-- cart --}}
 
@@ -258,6 +258,7 @@
           button.addEventListener("click", addCartClicked);
         }
         loadCartItems();
+        updateCartItem()
       }
 
       //remove cart item
@@ -266,6 +267,7 @@
         buttonClicked.parentElement.remove();
         updateTotal();
         saveCartItems();
+        updateCartItem()
       }
 
       //quantity change
@@ -276,6 +278,7 @@
         }
         updateTotal();
         saveCartItems();
+        updateCartItem()
       }
 
       //add cart function
@@ -288,6 +291,7 @@
         addProductToCart(title,price,productImg);
         updateTotal();
         saveCartItems();
+        updateCartItem()
       }
 
       function addProductToCart(title,price,productImg) {
@@ -322,6 +326,7 @@
         cartShopBox.getElementsByClassName('cart-quantity')[0]
         .addEventListener("change", quantityChanged);
         saveCartItems();
+        updateCartItem()
       }
 
       //update total
@@ -389,6 +394,21 @@
         if (cartTotal) {
           document.getElementsByClassName("total-price")[0].innerText = "$" + cartTotal;
         }
+        updateCartItem()
+      }
+
+      //quantity in cart item
+      function updateCartItem() {
+        var cartBoxes = document.getElementsByClassName('cart-box');
+        var quantity = 0;
+
+        for (var i =0; i < cartBoxes.length; i++){
+          var cartBox = cartBoxes[i];
+          var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
+          quantity += parseInt(quantityElement.value);
+        }
+        var cartIcon = document.querySelector("#cart-icon");
+        cartIcon.setAttribute("data-quantity", quantity);
       }
 
     </script>
