@@ -18,12 +18,10 @@
           <i class="bx bx-x" id="close-icon" onclick="hideMenu()"></i>
      
           <ul>
-            <li><a href="/index">HOME</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li class="active"><a href="/services">SERVICES</a></li>
-            <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/login">LOG IN</a></li>
-            <li><a href="/signup">REGISTER</a></li>
+            <li><a href="/loginIndex">HOME</a></li>
+            <li><a href="/loginAbout">ABOUT</a></li>
+            <li class="active"><a href="/loginServices">SERVICES</a></li>
+            <li><a href="/index">LOG OUT</a></li>
             
           </ul>
         </div>
@@ -33,7 +31,7 @@
 
 
       <!-- -------------------------------------------- -->
-
+    
     <section class="store">
         <header class="header-2">
             <div class="nav container">
@@ -62,14 +60,56 @@
               </div>
             </div>
         </header>    
-
+    </section>
     
-        
+    <section class="services">
+      <div class="container1">
+        <div class="content">
+          <h1><font color="yellow">B</font>est <font color="yellow">S</font>upplements in <font color="yellow">Sri Lanka</font></h1>
+        </div>
+       
+      
+      
+        <div class="card__container">
+          <article class="card__article">
+             <img 
+               src="https://supps247.com.au/cdn/shop/articles/DALL_E_2023-11-10_10.52.26_-_Create_an_engaging_and_dynamic_blog_banner_image_for_The_Ultimate_Guide_to_Pre-Workout_Supplements__Ingredients_That_Fuel_Performance_._The_design_sh.jpg?v=1699582069" 
+               alt="image" 
+               class="card__img"
+             />
+   
+             <div class="card__data">
+                <span class="card__description">PRE WORKOUT</span>
+                <h1 class="card__title">For that extra rep.</h1>
+                <div onclick="scrollToPreWorkout()" class="card__button">Visit Store</div>
+             </div>
+          </article>
+   
+          <article class="card__article">
+             <img 
+               src="https://img.freepik.com/free-vector/sport-nutrition-protein-whey-supplement-bars-container-packaging_33099-1545.jpg" 
+               alt="image" 
+               class="card__img"
+             />
+   
+             <div class="card__data">
+                <span class="card__description">WHEY PROTEIN</span>
+                <h2 class="card__title">For lean gains and definition.</h2>
+                <div onclick="scrollToWhey()" class="card__button">Visit Store</div>
+             </div>
+          </article>
+   
+          
+        </div>
+      </div>
+   
+    </section>
+    
     </section>
 
     {{!-- products --}}
     <section class="shop-container">
-      <h2 class="section-title">Shop Products</h2>
+      <h2 class="section-title">BEST <font color="yellow">SELLERS!</font></h2>
       {{!-- shop content --}}
       <div class="shop-content">
         {{!-- box 1 --}}
@@ -191,225 +231,301 @@
           <span class="price">$50</span>
           <i class="bx bx-shopping-bag add-cart"></i>
         </div>
+      </div>
+    </section>
 
-        {{!-- box 12 --}}
+    {{!-- pre workouts --}}
+
+    <section class="shop-container">
+      <h2 class="section-title">PRE <font color="yellow">WORKOUT</font></h2>
+      {{!-- shop content --}}
+      <div class="shop-content">
+        {{!-- box 1 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzbAvmjqTca9GgOdd_9nhzzQonVyi27FbLeyh9WabzWo8gnMIVRUEmopCH7gL4t2yjBtXUZUy5JoHhlxfKQvKLp2WyocHugAjAu9bf0EjDyy_pSQc4bqUNoonexuuI3EOH6vldjgkpstY9wvynct7keI9MNoTDV8QllarLmFLcBzIzsQQcFSiJwpFDK3w/s320/ABE-Sour-Apple_1024x1024@2x.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">ABE Sour Apple</h2>
+          <span class="price">$99</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 2 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4Ys4ynR1XMwew0aItH-rmkeAVdiHhLHjNLbfYwyPENUOIIRhpEl26Vjz5ZLrDm17OuSd9UT0cQ_MiRLvsHffZiYXoA_V5y8Yiryk__hKNZg1uWcbckCnYLhTfFUty8iEbRvAXkEUWtvXrOMZyFJop28pmOpCWeyjOPuJu7zp4NDe2eh43L4yBnWeUxx4/s320/All%20Max%20Caffeine.webp" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">All Max Caffeine</h2>
+          <span class="price">$89</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 3 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghrVHp6L8gWchFsxWptEtSsi7QA4GKoibbdAs_ug4MWMT0NyvzvaMvG5UokOwd4dm_qF1vss0XyEN78VfS5Amfz2dNF10POKt1-GfIDiMWwy8hqmrNd3E_MAZX5GsHUCk9BMfZ2Y3c8xrtafuHwAkZ2Cl6TUe8jwFGKM_CyWf2Zu9JmURSgB9Jjb5ZXlE/s320/ANIMAL%20PUMP.webp" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">ANIMAL PUMP</h2>
+          <span class="price">$94.89</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 4 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg99RVQv2zB5OJvTQLqIe9cEauyZOIHrRO79tIgutdwgYeHaRxtm7CeXjG7Q9ecLAx7km1btB9k-ZMaxOOD1ASL2TG6-3ijh8FkiRfZOkE6MTpKLM6R2dpO07kxNVsIgXoR0664rE2758Db7KvviCYLsbKCOfpXoaTbcDNg_X03PFaObor6d62UG9Ab5uM/s320/ASSAULT.webp" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">ASSAULT</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 5 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioDBz3yQzXTljHv1lc6Ey1CDR2O_FGX4KpfLj0k8cpGkD5b2PHnzBeXHBUYEcQYTZKu18NZwdqxOgsLNMLHBv0OspxF2OmkDcPUgH6SB05u_Nl_b2Cm9L7J6EjGdmmJXGzq_0mq_ZD6ByYXG18OGcnpmrH9KZBPpbZbzBVtxqx3F3g61S5qibj12aKKuk/s1600/Gold%20Standard%20Whey.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Gold Standard Whey</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 6 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEvPVFnIfd4Is6OjEHOGMbaIMz-WgXItzfy80HxgM0H3MrQS7cLL0B_iooflCwFo53qgjKdEwEhs5TjDXOALcN4mC7rTSWtiRxXr0EziReIYouuTffxLr_Uc1SuRxRnULVT5gJ_FVOj78FZRuj1IvOas5Zi5ktzLwCsoea80JCbSEE8ZCQXa_5HbCa_a8/s320/ISOJECT%20PURE%20WHEY%20ISOLATE.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">ISOJECT PURE WHEY ISOLATE</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 7 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgh28iY5bYOtTn7s6IL41o41gmtF_y3QyH7Yz3vghzEI9oPYfqRIwZe0rXtTE70o3wSrM9Oj26hF8r3qeMyneum262i_JRcb0qE8dDxinqn-nweyW_9rmgPkWhjJPaVk6HAxJMFO1P49kATS1VtYxY_4EMWpeYswLHj59vFO2kdhXAk-bS83sDwcldgAdY/s1600/Lipo%206%20Black%20Ultra%20Concentrate.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Lipo 6 Black Ultra Concentrate</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 8 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOXKuAVVPTwHJ3s66AJB6LnJJWRtRKDGcVinYFPesyZ5D6BDsba5iAeDrpTbcuj1t3iwGPLkymAvECIOyPChSiW2hIAy8nBjrjhoiN7DkNf83gJzk_Fo_k55ilUqAj11lQ7lsQMI8vkDRDau6JywUBZiEpUW06nAziyJoQ8Bs4guMiXl3zwMHzBX4rdtY/s1600/N.O.%20Xplode.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">N.O. Xplode</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 9 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVxzQGDcUOp3lk4BWONP2l_yXETMVp_JMJl2do__Uj2RQj6sRyBmWekwj-em2meq_ZUA0LOArvDQQ1VXWC20xJq9_QmHDpz3zDgeiZ_T_eD1mVdfQ2cPDdU_wTPXrVu4PHWNojE-kOPAmDeH99YoitaYUv-3Yr7Yyv-E4qMF4bC2WgoaeZDecv7-gR7E0/s1600/Nitro-Tech%20Ripped.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Nitro-Tech Ripped</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+  
+        {{!-- box 11 --}}
         <div class="product-box">
           <img 
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3uw-tnpJh-Fig9vmjxqW_CzprN4Vs_rawLRTbzLawkQlP7BX336_wi7yHgr4ZFf7IR8IAJrdJo5E3_L5at5whSR2ydKQElSmQHB1-A4Hy79Xr1ij4XRgFEUanotKhqx1KZQiOsLhgaQTt4_owy4vOdisvWr0HK4NaGDV1UTvcWarg0lAWBtn45XROQiM/s320/YEAH%20BUDDY.jpeg" 
             alt="" 
             class="product-img"
           />
-          <h2 class="product-title">YEAH BUDDY</h2>
+          <h2 class="product-title">SERIOUS MASS</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-container">
+      <h2 class="section-title">BEST <font color="yellow">SELLERS!</font></h2>
+      {{!-- shop content --}}
+      <div class="shop-content">
+        {{!-- box 1 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsAaY2wQ0JPQBLOxceUgi86SKOzqmF8h0WM7skJrcWJ-y_gy22VPKwzttJ9YojL84jsr1H_iXMW05N_1uWQk5ImYjSfgtVjgYxkQO3xljcJ-R01_Okfk4YMJPGRrBoQEzXMZucWQWn7Dr-UExapwjCfSKEIqKrphDX7FhGvpit5kr8VrN6dQIQJa7ljGY/s1600/Dymatize%20Iso%20100.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Dymatize Iso 100</h2>
           <span class="price">$50</span>
           <i class="bx bx-shopping-bag add-cart"></i>
         </div>
 
-    <script>
-      //cart 0pen close
-      let cartIcon = document.querySelector("#cart-icon");
-      let cart = document.querySelector(".cart");
-      let closeCart = document.querySelector("#close-cart");
-
-      //open cart
-
-      cartIcon.onclick = () => {
-          cart.classList.add("active");
-      };
-
-      //closs cart
-
-      closeCart.onclick = () => {
-          cart.classList.remove("active");
-      };
-
-      //making add to cart
-
-      //cart working JS
-
-      if (document.readyState == "loading") {
-        document.addEventListener("DOMContentLoaded", ready);
-      }else{
-        ready();
-      }
-
-      //making function
-
-      function ready() {
-        //remove item from cart
-        var removeCartButtons = document.getElementsByClassName("cart-remove");
-        for(var i = 0; i<removeCartButtons.length; i++){
-          var button = removeCartButtons[i];
-          button.addEventListener("click", removeCartItem);
-        }
-
-        // quantity change
-
-        var quantityInputs = document.getElementsByClassName("cart-quantity");
-        for(var i = 0; (i<quantityInputs.length); i++){
-          var input = quantityInputs[i];
-          input.addEventListener("change", quantityChanged);
-        }
-
-        //add to cart
-
-        var addCart = document.getElementsByClassName("add-cart");
-        for (var i = 0; i < addCart.length; i++){
-          var button = addCart[i];
-          button.addEventListener("click", addCartClicked);
-        }
-        loadCartItems();
-        updateCartItem()
-      }
-
-      //remove cart item
-      function removeCartItem(event) {
-        var buttonClicked = event.target;
-        buttonClicked.parentElement.remove();
-        updateTotal();
-        saveCartItems();
-        updateCartItem()
-      }
-
-      //quantity change
-      function quantityChanged(event) {
-        var input = event.target;
-        if (isNaN(input.value) || input.value<=0){
-          input.value = 1;  
-        }
-        updateTotal();
-        saveCartItems();
-        updateCartItem()
-      }
-
-      //add cart function
-      function addCartClicked(event) {
-        var button = event.target;
-        var shopProducts = button.parentElement;
-        var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-        var price = shopProducts.getElementsByClassName("price")[0].innerText;
-        var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
-        addProductToCart(title,price,productImg);
-        updateTotal();
-        saveCartItems();
-        updateCartItem()
-      }
-
-      function addProductToCart(title,price,productImg) {
-        var cartShopBox = document.createElement("div");
-        cartShopBox.classList.add("cart-box");
-        var cartItems = document.getElementsByClassName("cart-content")[0];
-        var cartItemNames = cartItems.getElementsByClassName("cart-product-title");
-        for (var i = 0; i < cartItemNames.length; i++){
-          if (cartItemNames[i].innerText == title){
-            alert('You have already added this item to cart');
-            return;
-          }
-        }
-        var cartBoxContent = `
-        <img src="${productImg}" alt="" class="cart-img" />
-        <div class="detail-box">
-          <div class="cart-product-title">${title}</div>
-          <div class="cart-price">${price}</div>
-          <input 
-            type="number"
-            name=""
-            id=""
-            value="1"
-            class="cart-quantity"
+        {{!-- box 2 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdNnqA3dMNGOrjtZB6YE6SyOFXyoRxnGUcCTlgec1ucmuWmEKwErPRbxiLdRfouX4sPnxBsJHag-xFzk_P4NWqvK9L-yDBPzjfxbxA7V32skvWT5k8VfNnIkSiu7nVIzopKKWShD_V39SmfeUvCAmp2qA7Y-M18RXD3jDwutm8bTJO7qEpZVWiNA2B-ZQ/s320/EVOFUSION.jpeg" 
+            alt="" 
+            class="product-img"
           />
+          <h2 class="product-title">EVOFUSION</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
         </div>
-        <i class="bx bx-trash-alt cart-remove"></i>`;
-        cartShopBox.innerHTML = cartBoxContent;
-        cartItems.append(cartShopBox);
-        cartShopBox.getElementsByClassName('cart-remove')[0]
-        .addEventListener("click", removeCartItem);
-        cartShopBox.getElementsByClassName('cart-quantity')[0]
-        .addEventListener("change", quantityChanged);
-        saveCartItems();
-        updateCartItem()
+
+        {{!-- box 3 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfI2jeHLEDX70CyXVlyEMYN53MZR7ZiHDcPVZxXv-iUQjOQ8zOM34Uah7klNgWApizKWs4cfxXP64ZL_EuiHfYUg7ZsBVcQqMcI4w1odYkNQhO4Et1mmrgRn73RrygwPF7M9pqIWWLFOOvbDlaTKq1yqufHsRYYtncYeXy4fFuWLLQPBqGq9TOj1N4NF8/s320/EVP%20EXTREME%20N.O..jpg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">EVP EXTREME N.O</h2>
+          <span class="price">$10</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 4 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEii5MTxm887F-rDaJR9mXZbKgvL_0Gl9oSINRfCExl5R1KM99jE84-jnv62UUHVAz1mCxTIeSMdacqUXnjLnrfqeFxFq9bptWSLRjDBadSZ_573DNz4Lv2Qf0qDRclRcnu09HVsGaWoV32OVZVUtnfjcoEUziC-1MPodbBuLenNTD_zvrG_z9wISu35T-w/s320/EVP-3D.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">EVP-3D</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 5 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioDBz3yQzXTljHv1lc6Ey1CDR2O_FGX4KpfLj0k8cpGkD5b2PHnzBeXHBUYEcQYTZKu18NZwdqxOgsLNMLHBv0OspxF2OmkDcPUgH6SB05u_Nl_b2Cm9L7J6EjGdmmJXGzq_0mq_ZD6ByYXG18OGcnpmrH9KZBPpbZbzBVtxqx3F3g61S5qibj12aKKuk/s1600/Gold%20Standard%20Whey.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Gold Standard Whey</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 6 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEvPVFnIfd4Is6OjEHOGMbaIMz-WgXItzfy80HxgM0H3MrQS7cLL0B_iooflCwFo53qgjKdEwEhs5TjDXOALcN4mC7rTSWtiRxXr0EziReIYouuTffxLr_Uc1SuRxRnULVT5gJ_FVOj78FZRuj1IvOas5Zi5ktzLwCsoea80JCbSEE8ZCQXa_5HbCa_a8/s320/ISOJECT%20PURE%20WHEY%20ISOLATE.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">ISOJECT PURE WHEY ISOLATE</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 7 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgh28iY5bYOtTn7s6IL41o41gmtF_y3QyH7Yz3vghzEI9oPYfqRIwZe0rXtTE70o3wSrM9Oj26hF8r3qeMyneum262i_JRcb0qE8dDxinqn-nweyW_9rmgPkWhjJPaVk6HAxJMFO1P49kATS1VtYxY_4EMWpeYswLHj59vFO2kdhXAk-bS83sDwcldgAdY/s1600/Lipo%206%20Black%20Ultra%20Concentrate.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Lipo 6 Black Ultra Concentrate</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 8 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOXKuAVVPTwHJ3s66AJB6LnJJWRtRKDGcVinYFPesyZ5D6BDsba5iAeDrpTbcuj1t3iwGPLkymAvECIOyPChSiW2hIAy8nBjrjhoiN7DkNf83gJzk_Fo_k55ilUqAj11lQ7lsQMI8vkDRDau6JywUBZiEpUW06nAziyJoQ8Bs4guMiXl3zwMHzBX4rdtY/s1600/N.O.%20Xplode.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">N.O. Xplode</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        {{!-- box 9 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVxzQGDcUOp3lk4BWONP2l_yXETMVp_JMJl2do__Uj2RQj6sRyBmWekwj-em2meq_ZUA0LOArvDQQ1VXWC20xJq9_QmHDpz3zDgeiZ_T_eD1mVdfQ2cPDdU_wTPXrVu4PHWNojE-kOPAmDeH99YoitaYUv-3Yr7Yyv-E4qMF4bC2WgoaeZDecv7-gR7E0/s1600/Nitro-Tech%20Ripped.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">Nitro-Tech Ripped</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+  
+        {{!-- box 11 --}}
+        <div class="product-box">
+          <img 
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3uw-tnpJh-Fig9vmjxqW_CzprN4Vs_rawLRTbzLawkQlP7BX336_wi7yHgr4ZFf7IR8IAJrdJo5E3_L5at5whSR2ydKQElSmQHB1-A4Hy79Xr1ij4XRgFEUanotKhqx1KZQiOsLhgaQTt4_owy4vOdisvWr0HK4NaGDV1UTvcWarg0lAWBtn45XROQiM/s320/YEAH%20BUDDY.jpeg" 
+            alt="" 
+            class="product-img"
+          />
+          <h2 class="product-title">SERIOUS MASS</h2>
+          <span class="price">$50</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+      </div>
+    </section>
+
+    <div onclick="scrollToUp()" class="scrollTop">
+      <i class='bx bx-up-arrow-alt'></i>
+    </div>
+    <script src="/cart.js" >
+
+    <script>
+      //       //scroll to up
+      function scrollToUp() {
+          window.scrollTo(0,0);
+        }
+
+      //scroll to pre workout
+      function scrollToPreWorkout() {
+      window.scrollTo(700,1950);
       }
 
-      //update total
-      function updateTotal() {
-        var cartContent = document.getElementsByClassName("cart-content")[0];
-        var cartBoxes = cartContent.getElementsByClassName("cart-box");
-        var total = 0;
-        for (var i = 0; i < cartBoxes.length; i++ ){
-          var cartBox = cartBoxes[i];
-          var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-          var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-          var price = parseFloat(priceElement.innerText.replace("$", ""));
-          var quantity = quantityElement.value;
-          total += price * quantity;
-        }
-        total = Math.round(total*100)/100;
-        document.getElementsByClassName("total-price")[0].innerText = "$" + total;
-
-        //save total to local storage
-        localStorage.setItem('cartTotal', total);
+      //scroll to Whey
+      function scrollToWhey() {
+      window.scrollTo(700,2800);
       }
 
-      //keep item in cart when page refresh with local storage
+      //payment option------------------------------------------------------
+      const payBtn = document.querySelector(".btn-buy");
 
-      function saveCartItems() {
-        var cartContent = document.getElementsByClassName("cart-content")[0];
-        var cartBoxes = cartContent.getElementsByClassName("cart-box");
-        var cartItems = [];
-
-        for (var i=0; i< cartBoxes.length; i++){
-          var cartBox = cartBoxes[i];
-          var titleElement = cartBox.getElementsByClassName('cart-product-title')[0];
-          var priceElement = cartBox.getElementsByClassName('cart-price')[0];
-          var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
-          var productImg = cartBox.getElementsByClassName('cart-img')[0].src;
-
-          var item = {
-            title: titleElement.innerText,
-            price: priceElement.innerHTML,
-            quantity: quantityElement.value,
-            productImg: productImg,
-          };
-          cartItems.push(item);
-        }
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      }
-
-      //load in cart
-      function loadCartItems() {
-        var cartItems = localStorage.getItem('cartItems');
-        if (cartItems){
-          cartItems = JSON.parse(cartItems);
-
-          for (var i = 0; i < cartItems.length; i++){
-            var item = cartItems[i];
-            addProductToCart(item.title, item.price, item.productImg);
-
-            var cartBoxes = document.getElementsByClassName('cart-box');
-            var cartBox = cartBoxes[cartBoxes.length - 1];
-            var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
-            quantityElement.value = item.quantity;
-          }
-        }
-        var cartTotal = localStorage.getItem("cartToatal");
-        if (cartTotal) {
-          document.getElementsByClassName("total-price")[0].innerText = "$" + cartTotal;
-        }
-        updateCartItem()
-      }
-
-      //quantity in cart item
-      function updateCartItem() {
-        var cartBoxes = document.getElementsByClassName('cart-box');
-        var quantity = 0;
-
-        for (var i =0; i < cartBoxes.length; i++){
-          var cartBox = cartBoxes[i];
-          var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-          quantity += parseInt(quantityElement.value);
-        }
-        var cartIcon = document.querySelector("#cart-icon");
-        cartIcon.setAttribute("data-quantity", quantity);
-      }
+      payBtn.addEventListener("click", () => {
+      fetch("/store/stripe-checkout", {
+          method: "post",
+          headers: new Headers({ "Content-Type": "application/Json" }),
+          body: JSON.stringify({
+          items: JSON.parse(localStorage.getItem("cartItems")),
+          }),
+      })
+      .then((res) => res.json())
+      .then((url) => {
+          location.href = url;
+      })
+      .catch((err) => console.log(err));
+      })
 
     </script>
 </body>

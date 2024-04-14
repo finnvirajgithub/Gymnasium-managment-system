@@ -9,6 +9,7 @@
   outline: none;
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -36,7 +37,7 @@ body{
   top: 0;
   left: 0;
   width: 100%;
-  height: 200vh;
+  height: 300vh;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -190,9 +191,9 @@ i {
   z-index: 200;
 }
 
-section .store {
+/* section .store {
   min-height: 10px;
-}
+} */
 
 .container{
   max-width: 1068px;
@@ -226,6 +227,7 @@ section .store {
   position: relative;
   font-size: 2rem;
   cursor: pointer;
+  color: white;
 }
 
 #cart-icon[data-quantity = "0"]::after{
@@ -377,17 +379,21 @@ section .store {
 }
 
 .shop-container{
-  padding-top: 3rem;
+  padding-top: 0;
+  z-index: 2;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .section-title {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 5rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.8rem;
   margin-top: 2rem;
-  z-index: 300;
+  z-index: 3;
 }
 
 .shop {
@@ -479,6 +485,216 @@ section .store {
   margin: 0.5rem 0;
   z-index: 2;
 }
+
+.scrollTop {
+  position: fixed;
+  font-size: 2rem;
+  font-weight: 300;
+  bottom: 30px;
+  right: 30px;
+  padding: 5px 10px;
+  background-color: rgb(196, 196, 2);
+  color: black;
+  border-radius: 50px;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scrollTop:hover{
+  background-color: rgb(119, 119, 2);
+}
+
+/* store menu */
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text2-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(54.1,100%,50%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 5.25rem;
+  --small-font-size: 1rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text2-color);
+}
+
+.card_img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.services{
+  margin: 0px;
+  padding: 0px;
+  /* min-height: 100vh; */
+}
+
+
+/*=============== CARD ===============*/
+.container1 {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.content{
+  font-size: 30px;
+  z-index: 5;
+  margin-top: -30px;
+  color: var(--text-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card__container {
+  width: auto;
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card__img {
+  height: 400px;
+  width: 1000px;
+}
+
+.card__data {
+  width: 500px; 
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__title {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: .25rem;
+  color: black;
+  font-weight: 100;
+}
+
+.card__description {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--title-color);
+  margin-bottom: .55rem;
+  text-align: center;
+}
+
+.card__button {
+  font-size: 2rem;
+  font-weight: 200;
+  background-color: var(--container-color);
+  color: black;
+  cursor: pointer;
+  z-index: 2;
+}
+  
+  .scrollTop:hover{
+    background-color: rgb(119, 119, 2);
+  }
+.card__button:hover {
+  text-decoration: underline;
+}
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
 
 /* making responsiveness */
 
