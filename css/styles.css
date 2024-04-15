@@ -374,7 +374,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 727px;
+  height: 100vh;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -462,6 +462,11 @@ img {
   height: auto;
 }
 
+.services{
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+}
 
 
 /*=============== CARD ===============*/
@@ -479,6 +484,7 @@ img {
   z-index: 5;
   margin-top: -30px;
   color: var(--text-color);
+  padding-top: 50px;
 }
 
 

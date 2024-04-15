@@ -7,6 +7,11 @@ const mongoose = require("./src/mongodb")
 const collection = require("./src/signup");
 const collection1 = require("./src/responds");
 
+const stripe = require("stripe");
+const dotenv = require("dotenv");
+//load variables 
+dotenv.config();
+
 const templatePaths = path.join(__dirname,'');
 
 app.use(express.static(__dirname,''));
@@ -57,6 +62,18 @@ app.get("/cancel",(req,res) => {
     res.render("cancel")
 })
 
+app.get("/loginIndex",(req,res) => {
+    res.render("loginIndex")
+})
+
+app.get("/loginAbout",(req,res) => {
+    res.render("loginAbout")
+})
+
+app.get("/loginServices",(req,res) => {
+    res.render("loginServices")
+})
+
 //code for signup
 app.post("/signup",async (req,res)=> {
     const data = {
@@ -80,7 +97,7 @@ app.post("/signup",async (req,res)=> {
         const userdata = await collection.insertMany(data);
         console.log(userdata);
 
-        res.render("index");
+        res.render("loginIndex");
     } 
 })
 
@@ -110,13 +127,50 @@ app.post("/login", async (req,res)=> {
         //compare the hash password from the database with the plain text
         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
         if(isPasswordMatch){
-            res.render("index");
+            res.render("loginIndex");
         }else{
             req.send("Incorrect Password.");
         }
     }catch{
         res.send("Incorrect Username or Password.");
     };
+});
+
+//stripe
+
+let stripeGetway = stripe(process.env.stripe_api);
+let DOMAIN = process.env.DOMAIN;
+
+app.post("/stripe-checkout", async (req,res) => {
+    const lineItems = req.body.items.map((item) => {
+        const unitAmount = parseInt(item.price.replace(/[^0-9.-]+/g, "") * 100); 
+        console.log("item-price:", item.price);
+        console.log("unitAmount:", unitAmount);
+        return {
+            price_data: {
+                currency: "usd",
+                procuct_data: {
+                    name: item.title,
+                    images: [item.procuctImg]
+                },
+                unit_amount: unitAmount,
+            },
+            quantity: item.quantity,
+        };
+    });
+    console.log("lineItems:", lineItems);
+
+    //create checkout session
+    const session = await stripeGateway.checkout.sessions.create({
+        payment_method_types: ['card'],
+        mode: 'payment',
+        success_url: `${DOMAIN}/success`,
+        cancel_url: `${DOMAIN}/cancel`,
+        line_items: lineItems,
+        //asking address in stripe checkout page
+        billing_address_collection: "required",
+    });
+    res.json(session.url);  
 });
 
 
