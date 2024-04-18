@@ -74,6 +74,13 @@ app.get("/loginServices",(req,res) => {
     res.render("loginServices")
 })
 
+app.get("/profile",(req,res) => {
+    res.render("profile")
+})
+
+app.get("/coaching",(req,res) => {
+    res.render("coaching")
+})
 //code for signup
 app.post("/signup",async (req,res)=> {
     const data = {
