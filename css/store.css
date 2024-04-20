@@ -434,11 +434,13 @@ i {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .price {
   font-weight: 500;
   font-size: 1.3rem;
+  color: white;
 }
 
 .add-cart {
@@ -733,4 +735,10 @@ body {
   .cart {
     width: 100%;
   }
+}
+
+/* login option */
+
+.loginOption{
+  margin: 30px;
 }
