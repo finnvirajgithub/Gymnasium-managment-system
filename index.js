@@ -9,6 +9,9 @@ const collection1 = require("./src/responds");
 
 const stripe = require("stripe");
 const dotenv = require("dotenv");
+const admin = require("./src/admin");
+const userdb = require("./src/users");
+const storedb = require("./src/store");
 //load variables 
 dotenv.config();
 
@@ -50,10 +53,6 @@ app.get("/contact",(req,res) => {
     res.render("contact")
 })
 
-app.get("/store",(req,res) => {
-    res.render("store")
-})
-
 app.get("/success",(req,res) => {
     res.render("success")
 })
@@ -81,8 +80,28 @@ app.get("/profile",(req,res) => {
 app.get("/coaching",(req,res) => {
     res.render("coaching")
 })
+
+app.get("/loginOption",(req,res) => {
+    res.render("loginOption")
+})
+
+app.get("/adminLogin",(req,res) => {
+    res.render("adminLogin")
+})
+
+app.get("/adminHome",(req,res) => {
+    res.render("adminHome")
+})
+
+app.get("/getUserDeatils",(req,res) => {
+    res.render("getUserDetails")
+})
+
+
+
 //code for signup
 app.post("/signup",async (req,res)=> {
+    console.log("hello2")
     const data = {
         username:req.body.email,
         password:req.body.password2
@@ -104,9 +123,26 @@ app.post("/signup",async (req,res)=> {
         const userdata = await collection.insertMany(data);
         console.log(userdata);
 
-        res.render("loginIndex");
+        res.render("getUserDetails");
     } 
 })
+
+//code for collection responds
+app.post("/getUserDetails",async (req,res) => {
+    console.log("hello")
+    const data2 = {
+        name:req.body.name,
+        address:req.body.address,
+        phone:req.body.phone,
+        weight:req.body.weight,
+        height:req.body.height,
+    }
+
+    const responds = await userdb.insertMany(data2);
+    console.log(responds);
+    res.render("loginIndex");
+
+});
 
 //code for collection responds
 app.post("/contact",async (req,res) => {
@@ -143,6 +179,113 @@ app.post("/login", async (req,res)=> {
     };
 });
 
+//code for admin login
+app.post("/adminLogin", async (req,res)=> {
+    try{
+        const check = await admin.findOne({username: req.body.username});
+        if(!check){
+            res.send("Username can not found.")
+        }
+
+        //compare the password from the database with the plain text
+        if(check.password==req.body.password){
+            res.render("adminHome");
+        }else{
+            req.send("Incorrect Password.");
+        }
+    }catch{
+        res.send("Incorrect Username or Password.");
+    };
+});
+
+//code for fetch customer details
+app.post("/customerDetails", async (req,res)=> {
+    try{
+        const check = await admin.findOne({username: req.body.username});
+        if(!check){
+            res.send("Username can not found.")
+        }
+
+        //compare the hash password from the database with the plain text
+        const isPasswordMatch = await compare(req.body.password, check.password);
+        if(isPasswordMatch){
+            res.render("adminHome");
+        }else{
+            req.send("Incorrect Password.");
+        }
+    }catch{
+        res.send("Incorrect Username or Password.");
+    };
+});
+
+
+//load customer details
+
+app.get("/customerDetails", async (req, res) => {
+    try {
+        const userscollections = await userdb.find({}).exec();
+        res.render("customerDetails", {
+            usersList: userscollections  // Pass retrieved users to the template
+        });
+    } catch (err) {
+        console.error("Error fetching users:", err);
+        res.status(500).send("Error fetching users");
+    }
+});
+
+//code for add item
+app.post("/adminStore",async (req,res) => {
+    const data2 = {
+        title:req.body.title,
+        price:req.body.price,
+        image:req.body.image,
+    }
+
+    const responds = await storedb.insertMany(data2);
+    console.log(responds);
+    res.render("adminStore");
+
+});
+
+
+//load store items into admin store
+app.get("/adminStore", async (req, res) => {
+    try {
+        const storecollections = await storedb.find({}).exec();
+        res.render("adminStore", {
+            itemList: storecollections  // Pass retrieved users to the template
+        });
+    } catch (err) {
+        console.error("Error fetching users:", err);
+        res.status(500).send("Error fetching users");
+    }
+});
+
+//load store items into store
+app.get("/loginStore", async (req, res) => {
+    try {
+        const storecollections = await storedb.find({}).exec();
+        res.render("loginStore", {
+            itemList: storecollections  // Pass retrieved users to the template
+        });
+    } catch (err) {
+        console.error("Error fetching users:", err);
+        res.status(500).send("Error fetching users");
+    }
+});
+
+//load store items into store
+app.get("/store", async (req, res) => {
+    try {
+        const storecollections = await storedb.find({}).exec();
+        res.render("store", {
+            itemList: storecollections  // Pass retrieved users to the template
+        });
+    } catch (err) {
+        console.error("Error fetching users:", err);
+        res.status(500).send("Error fetching users");
+    }
+});
 //stripe
 
 let stripeGetway = stripe(process.env.stripe_api);

@@ -117,7 +117,7 @@ section {
   padding: 10rem 9% 2rem;
 }
 
-.home, .about-h, .about, .sign-up, .services, .contact{
+.home, .about-h, .about, .sign-up, .services, .contact, .customerDetails{
   background: url(/images/main/group-young-people-training-gym-indoors-maintaining-sportive-lifestyle.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -166,7 +166,7 @@ section {
 }
 
 .btn-box .btn{
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   background: var(--text-color);
   color: black;
   padding: .5rem 2rem;
@@ -174,7 +174,7 @@ section {
   font-size: 2rem;
   font-weight: 800;
   z-index: 2;
-  width: 20rem;
+  width: 30rem;
   height: 100%;
   text-align: center;
 }
@@ -646,4 +646,122 @@ img {
     width: 316px;
     padding-inline: 2.5rem;
   }
+}
+
+/* customer details */
+.customerDetails::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0 , 0 , 0.6);
+}
+
+table {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+table tr th, td{
+  color: white;
+  z-index: 500;
+}
+
+/* admin store */
+
+.card-store, form {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 5rem;
+}
+
+.store form {
+  width: 600px;
+}
+
+.store form .input-box {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+.store form .btn-box {
+  width: 100px;
+}
+
+.store form label {
+  margin: 10px;
+  color: white;
+}
+
+.store .card-admin {
+  position: relative;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+/* ADMINS HOME CSS */
+
+.admin-boxes {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+
+.admin-boxes a {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.admin-boxes a:hover {
+  text-decoration: none;
+}
+
+.admin-box:hover {
+  background: rgba(0, 0 , 0 , 0.6);
+  color: white;
+}
+
+.admin-box h1 {
+  padding: 40px;
+}
+
+.box1 {
+  background-color: red;
+}
+
+.box2 {
+  background-color: orange;
+}
+
+.box3 {
+  background-color: green;
+}
+
+.box4 {
+  background-color: lightseagreen;
+}
+
+.adminhome::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0 , 0 , 0.6);
 }
