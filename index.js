@@ -12,6 +12,8 @@ const dotenv = require("dotenv");
 const admin = require("./src/admin");
 const userdb = require("./src/users");
 const storedb = require("./src/store");
+const workoutdb = require("./src/workout");
+const trainerdb = require("./src/trainer");
 //load variables 
 dotenv.config();
 
@@ -97,6 +99,25 @@ app.get("/getUserDeatils",(req,res) => {
     res.render("getUserDetails")
 })
 
+app.get("/workout",(req,res) => {
+    res.render("workout")
+})
+
+app.get("/cardio",(req,res) => {
+    res.render("cardio")
+})
+
+app.get("/muscle",(req,res) => {
+    res.render("muscle")
+})
+
+app.get("/cardioplanes",(req,res) => {
+    res.render("cardioplanes")
+})
+
+app.get("/abs",(req,res) => {
+    res.render("abs")
+})
 
 
 //code for signup
@@ -233,6 +254,60 @@ app.get("/customerDetails", async (req, res) => {
     }
 });
 
+//load workout details
+
+app.get("/adminWorkout", async (req, res) => {
+    try {
+        const workoutcollections = await workoutdb.find({}).exec();
+        res.render("adminWorkout", {
+            workoutList: workoutcollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/upper", async (req, res) => {
+    try {
+        const workoutcollections = await workoutdb.find({}).exec();
+        res.render("upper", {
+            workoutList: workoutcollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+//load Trainer details
+
+app.get("/adminTrainer", async (req, res) => {
+    try {
+        const trainercollections = await trainerdb.find({}).exec();
+        res.render("adminTrainer", {
+            trainerList: trainercollections  // Pass retrieved Trainer to the template
+        });
+    } catch (err) {
+        console.error("Error fetching Trainer:", err);
+        res.status(500).send("Error fetching Trainer");
+    }
+});
+
+//load Trainer details to user services
+
+app.get("/trainers", async (req, res) => {
+    try {
+        const trainercollections = await trainerdb.find({}).exec();
+        res.render("trainers", {
+            trainerList: trainercollections  // Pass retrieved Trainer to the template
+        });
+    } catch (err) {
+        console.error("Error fetching Trainer:", err);
+        res.status(500).send("Error fetching Trainer");
+    }
+});
+
 //code for add item
 app.post("/adminStore",async (req,res) => {
     const data2 = {
@@ -247,6 +322,37 @@ app.post("/adminStore",async (req,res) => {
 
 });
 
+//code for add workout
+app.post("/adminWorkout",async (req,res) => {
+    const data2 = {
+        title:req.body.title,
+        type:req.body.type,
+        purpose:req.body.purpose,
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+    }
+
+    const responds = await workoutdb.insertMany(data2);
+    console.log(responds);
+    res.render("adminWorkout");
+
+});
+
+//code for add item
+app.post("/adminTrainer",async (req,res) => {
+    const data2 = {
+        name:req.body.name,
+        level:req.body.level,
+        fee:req.body.fee,
+        image:req.body.image,
+    }
+
+    const responds = await trainerdb.insertMany(data2);
+    console.log(responds);
+    res.render("adminTrainer");
+
+});
 
 //load store items into admin store
 app.get("/adminStore", async (req, res) => {
@@ -257,7 +363,7 @@ app.get("/adminStore", async (req, res) => {
         });
     } catch (err) {
         console.error("Error fetching users:", err);
-        res.status(500).send("Error fetching users");
+        res.status(500).send("Error fetching Items");
     }
 });
 
@@ -270,7 +376,7 @@ app.get("/loginStore", async (req, res) => {
         });
     } catch (err) {
         console.error("Error fetching users:", err);
-        res.status(500).send("Error fetching users");
+        res.status(500).send("Error fetching Items");
     }
 });
 

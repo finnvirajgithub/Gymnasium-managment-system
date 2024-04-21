@@ -28,9 +28,9 @@
         <li><a href="/adminHome">HOME</a></li>
         <li class="active"><a href="/customerDetails">CUSTOMERS</a></li>
         <li><a href="/adminStore">STORE</a></li>
-        <li><a href="/contact">WORKOUTS</a></li>
+        <li><a href="/adminWorkout">WORKOUTS</a></li>
         <li><a href="/login">TRAINERS</a></li>
-        <li><a href="/signup">LOGOUT</a></li>
+        <li><a href="/index">LOGOUT</a></li>
       </ul>
     </div>
   </header>
@@ -40,23 +40,23 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">NAME</th>
       <th scope="col">ADDRESS</th>
       <th scope="col">PHONE</th>
       <th scope="col">WEIGHT</th>
       <th scope="col">HEIGHT</th>
+      <th scope="col">TRAINER</th>
     </tr>
   </thead>
   <tbody>
      {{#each usersList}}
         <tr>
-            <th scope="row">1</th>
             <td>{{ this.name}}</td>
             <td>{{ this.address}}</td>
             <td>{{ this.phone}}</td> 
             <td>{{ this.weight}}</td>
-            <td>{{ this.height}}</td>           
+            <td>{{ this.height}}</td> 
+            <td>{{ this.trainer}}</td>          
         </tr>
      {{/each}}
     

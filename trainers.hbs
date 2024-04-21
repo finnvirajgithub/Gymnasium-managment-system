@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRUSH | FITNESS </title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/store.css">
+
+  <!--box icons-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  
+  <!-- Header design -->
+
+  <header class="header">
+    <a href="#" class="logo"><p class="first">THRUSH</p><p class="second">FITNESS</p></a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <div class="nav-links" id="navLinks">
+      <i class="bx bx-x" onclick="hideMenu()"></i>
+
+      <ul>
+        <li><a href="/loginIndex">HOME</a></li>
+        <li><a href="/loginAbout">ABOUT</a></li>
+        <li class="active"><a href="/loginServices">SERVICES</a></li>
+        <li><a href="/profile">PROFILE</a></li>
+        <li><a href="/index">LOG OUT</a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <!---------------------------------------------------------------------------------------->
+  <!-- Home section design-->
+
+  <section class="store">
+    
+    <div class="shop-content">
+        {{#each trainerList}}
+          <form action="/trainers" method="post">
+            <div class="product-box">
+              <img 
+                  src="{{this.image}}" 
+                  alt="" 
+                  class="product-img"
+              />
+              <h2 class="product-title">{{this.name}}</h2>
+              <span class="price">{{this.level}}</span><br>
+              <span class="price">{{this.fee}}</span>
+              <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+          </form>
+            
+        {{/each}}
+    </div>
+</body>
+</html>

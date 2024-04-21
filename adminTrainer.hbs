@@ -27,9 +27,9 @@
       <ul>
         <li><a href="/adminHome">HOME</a></li>
         <li><a href="/customerDetails">CUSTOMERS</a></li>
-        <li class="active"><a href="/adminStore">STORE</a></li>
+        <li><a href="/adminStore">STORE</a></li>
         <li><a href="/adminWorkout">WORKOUTS</a></li>
-        <li><a href="/adminTrainer">TRAINERS</a></li>
+        <li class="active"><a href="/adminTrainer">TRAINERS</a></li>
         <li><a href="/index">LOGOUT</a></li>
       </ul>
     </div>
@@ -37,30 +37,35 @@
   <section class="store">
     
     <div class="shop-content">
-        {{#each itemList}}
+        {{#each trainerList}}
             <div class="product-box">
                 <img 
                     src="{{this.image}}" 
                     alt="" 
                     class="product-img"
                 />
-                <h2 class="product-title">{{this.title}}</h2>
-                <span class="price">{{this.price}}</span>
-                <button type="submit" class="btn">Delete</button>
+                <h2 class="product-title">{{this.name}}</h2>
+                <span class="price">{{this.level}}</span><br>
+                <span class="price">{{this.fee}}</span>
+                <i class="bx bx-pen add-cart"></i>
                 </div>
         {{/each}}
     </div>
      
     
 
-  <form action="/adminStore" method="post" class="form1">
-    <h1 style="color: white; width:500px;">Add Item to store</h1>
+  <form action="/adminTrainer" method="post">
+    <h1 style="color: white;">Add a Trainer</h1>
     <div class="input-box">
-        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="name" placeholder="Name" required>
     </div>
 
     <div class="input-box">
-        <input type="text" name="price" placeholder="Price" required></i>
+        <input type="text" name="level" placeholder="Level" required></i>
+    </div>
+
+    <div class="input-box">
+        <input type="text" name="fee" placeholder="Fee" required></i>
     </div>
 
     <div class="input-box">
@@ -68,7 +73,7 @@
     </div>
     
     <div class="btn-box">
-        <button type="submit" class="btn btn-primary">Add item</button>
+        <button type="submit" class="btn btn-primary">Add Trainer</button>
     </div>
     
 </form>
