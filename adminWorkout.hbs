@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRUSH | FITNESS </title>
+
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+
+  <!--box icons-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  
+  <!-- Header design -->
+
+  <header class="header">
+    <a href="#" class="logo"><p class="first">THRUSH</p><p class="second">FITNESS</p></a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <div class="nav-links" id="navLinks">
+      <i class="bx bx-x" id="close-icon" onclick="hideMenu()"></i>
+
+      <ul>
+        <li><a href="/adminHome">HOME</a></li>
+        <li><a href="/customerDetails">CUSTOMERS</a></li>
+        <li><a href="/adminStore">STORE</a></li>
+        <li class="active"><a href="/adminWorkout">WORKOUTS</a></li>
+        <li><a href="/adminTrainer">TRAINERS</a></li>
+        <li><a href="/index">LOGOUT</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="workoutDetails">
+    
+   
+    <table class="table" style="margin-bottom: 50px;">
+  <thead>
+    <tr>
+      <th scope="col">TITLE</th>
+      <th scope="col">TYPE</th>
+      <th scope="col">PURPOSE</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each workoutList}}
+        <tr>
+            <td>{{ this.title}}</td>
+            <td>{{ this.type}}</td>
+            <td>{{ this.purpose}}</td>         
+        </tr>
+     {{/each}}
+    
+    
+  </tbody>
+</table>
+    <form action="/adminWorkout" method="post">
+    <h1 style="color: white;">Add a workout</h1>
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="title" placeholder="Title" required>
+    </div>
+
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="type" placeholder="type" required></i>
+    </div>
+
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="purpose" placeholder="purpose" required></i>
+    </div>
+
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="image1" placeholder="image src 1" required></i>
+    </div>
+
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="image2" placeholder="image src 2" required></i>
+    </div>
+
+    <div class="input-box" style="margin-bottom: 2rem;">
+        <input type="text" name="image3" placeholder="image src 3" required></i>
+    </div>
+    
+    <div class="btn-box">
+        <button type="submit" class="btn btn-primary">Add Workout</button>
+    </div>
+    
+</form>
+  </section>
+  
+</body>
+</html>

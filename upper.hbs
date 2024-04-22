@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRUSH | FITNESS </title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!--box icons-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+
+  <!-- Header design -->
+
+  <header class="header">
+   <a href="#" class="logo"><p class="first">THRUSH</p><p class="second">FITNESS</p></a>
+
+   <i class='bx bx-menu' id="menu-icon"></i>
+
+   <div class="nav-links" id="navLinks">
+     <i class="bx bx-x" id="close-icon" onclick="hideMenu()"></i>
+
+     <ul>
+       <li><a href="/loginIndex">HOME</a></li>
+       <li><a href="/loginAbout">ABOUT</a></li>
+       <li class="active"><a href="/loginServices">SERVICES</a></li>
+       <li><a href="/profile">PROFILE</a></li>       
+       <li><a href="/index">LOG OUT</a></li>
+     </ul>
+   </div>
+ </header>
+
+ 
+
+  
+
+
+
+  <!---------------------------------------------------------------------------------------->
+  <!-- Services section design-->
+
+  <body style="background-image: url(images/background.jpg); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  ">
+
+
+<section class="services">
+    <div class="container">
+      {{#each workoutList}}
+        <div class="content">
+          <h1>{{this.title}}</h1>
+         </div>
+    
+         <div class="card__container">
+           <article class="card__article">
+              <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+           </article>
+           <article class="card__article">
+            <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+            </article>
+            <article class="card__article">
+               <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+            </article>
+    
+           
+         </div>
+     {{/each}}
+       
+        
+
+      {{!-- <div class="content">
+          <h1>Bench Press</h1>
+         </div>
+    
+        <div class="card__container">
+           <article class="card__article">
+              <img src="/images/excersice/BenchPress/b.jpg" alt="image" class="cardio-img">
+
+           </article>
+           <article class="card__article">
+            <img src="/images/excersice/BenchPress/b1.jpg" alt="image" class="cardio-img">
+
+         </article>
+         <article class="card__article">
+            <img src="/images/excersice/BenchPress/b.jpg" alt="image" class="cardio-img">
+
+         </article>
+    
+           
+        </div>
+        
+
+               <div class="content">
+                  <h1>Alternating Dumbbell Curls</h1>
+                 </div>
+            
+                <div class="card__container">
+                   <article class="card__article">
+                      <img src="/images/excersice/Al/a.jpg" alt="image" class="cardio-img">
+        
+                   </article>
+                   <article class="card__article">
+                    <img src="/images/excersice/Al/a1.jpg" alt="image" class="cardio-img">
+        
+                 </article>
+                 <article class="card__article">
+                    <img src="/images/excersice/Al/a.jpg" alt="image" class="cardio-img">
+        
+                 </article>
+            
+                   
+                </div>
+        
+     </div> --}}
+    
+  </section>
+  
+
+</body>
+
+</html>

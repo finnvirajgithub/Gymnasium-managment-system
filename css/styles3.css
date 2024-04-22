@@ -25,6 +25,7 @@ html {
 body{
   background: var(--bg-color);
   color: var(--text-color);
+  
 }
 
 .header {
@@ -99,6 +100,7 @@ body{
   width: 100%;
 }
 
+
 #menu-icon {
   font-size: 3.2rem;
   color: var(--text-color);
@@ -117,7 +119,7 @@ section {
   padding: 10rem 9% 2rem;
 }
 
-.home, .about-h, .about, .sign-up, .services, .contact, .customerDetails, .profile, .workoutDetails{
+.home, .about-h, .about, .sign-up, .services, .contact , .workouts{
   background: url(/images/main/group-young-people-training-gym-indoors-maintaining-sportive-lifestyle.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -166,7 +168,7 @@ section {
 }
 
 .btn-box .btn{
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   background: var(--text-color);
   color: black;
   padding: .5rem 2rem;
@@ -174,7 +176,7 @@ section {
   font-size: 2rem;
   font-weight: 800;
   z-index: 2;
-  width: 30rem;
+  width: 20rem;
   height: 100%;
   text-align: center;
 }
@@ -234,7 +236,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 800px;
+  height: 1002px;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -293,7 +295,7 @@ section {
   border: none;
   outline: none;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 40px;
   font-size: 16px;
   color: white;
   padding: 20px 40px 20px 20px;
@@ -316,7 +318,6 @@ section {
   justify-content: space-between;
   font-size: 14.5px;
   margin: -15px 0 15px;
-  color: white;
 }
 
 .remember-forgot label input{
@@ -333,35 +334,15 @@ section {
   text-decoration: underline;
 }
 
-.sign-up .sign .form .no-account {
-  display: flex;
-  font-size: 14.5px;
-  margin: -15px 0 15px;
-}
-
-.no-account a {
-  color: yellow;
-  text-decoration: underline;
-}
-
-.no-account p {
-  padding-right: 5px;
-  color: white;
-}
-
-.no-account{
-  padding-top: 10px;
-}
-
 /* log in page */
 
-.log-in::after {
+.login::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 500px;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -374,7 +355,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 727px;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -387,7 +368,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 700px;
+  height: 650px;
   z-index: 1;
   background: rgba(0, 0 , 0 , 0.6);
 }
@@ -462,14 +443,9 @@ img {
   height: auto;
 }
 
-.services{
-  margin: 0px;
-  padding: 0px;
-  min-height: 100vh;
-}
 
 
-/*=============== CARD ===============*/
+/*=============== SERVICES-CARD ===============*/
 .container {
   display: grid;
   place-items: center;
@@ -484,7 +460,6 @@ img {
   z-index: 5;
   margin-top: -30px;
   color: var(--text-color);
-  padding-top: 50px;
 }
 
 
@@ -525,7 +500,7 @@ img {
 }
 
 .card__title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
   color: var(--title-color);
   margin-bottom: .55rem;
@@ -560,6 +535,125 @@ img {
 .card__article:not(:hover) .card__data {
   animation: remove-data 1s forwards;
 }
+
+
+
+/*=============== WORKOUT-CARD ===============*/
+.container-w {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.content-w{
+  font-size: 30px;
+  z-index: 5;
+  margin-top: -30px;
+  color: var(--text-color);
+}
+
+
+.card-container {
+  display: grid;
+  row-gap: 5.5rem;
+}
+
+.card-article {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 800px;
+  height:100px;
+  border-radius: 2rem;
+
+  
+}
+
+
+
+.card-description {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: .25rem;
+}
+
+.card-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--title-color);
+  margin-bottom: .55rem;
+}
+
+.card-button {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card-button:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/*=============== CARDIO ===============*/
+.content-c{
+  font-size: 15px;
+  z-index: 5;
+  
+  color: var(--text-color);
+  margin-left: 200px;
+  margin-right: 200px;
+  
+}
+
+.content-title {
+  font-size: 15px;
+  z-index: 5;
+  
+  color: var(--text-color);
+  text-align: center;
+}
+
+.card-container-c{
+  display: grid;
+  row-gap: 5.5rem;
+}
+
+.cardio-img {
+    width: 328px;
+    height: 320px;
+    border-radius: 2rem;
+  }
+
+
+
+/* Naming animations in hover */
+.card-article:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card-article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card-article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+}
+
 
 /* Card animation */
 @keyframes show-data {
@@ -647,201 +741,3 @@ img {
     padding-inline: 2.5rem;
   }
 }
-
-/* customer details */
-.customerDetails::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  background: rgba(0, 0 , 0 , 0.6);
-}
-
-table {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  font-size: 2rem;
-  padding-top: 2rem;
-}
-
-table tr th, td{
-  color: white;
-  z-index: 500;
-}
-
-/* admin store */
-
-.card-store, form {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 5rem;
-}
-
-.store .form1 {
-  width: 00px;
-}
-
-.store form .input-box {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  width: 500px;
-}
-
-.store form .btn-box {
-  width: 100px;
-}
-
-.store form label {
-  margin: 10px;
-  color: white;
-}
-
-.store .card-admin {
-  position: relative;
-  z-index: 2;
-  margin-top: 100px;
-}
-
-/* ADMINS HOME CSS */
-
-.admin-boxes {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  color: white;
-  flex-direction: row;
-  margin-top: 3rem;
-}
-
-.admin-boxes a {
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.admin-boxes a:hover {
-  text-decoration: none;
-}
-
-.admin-box:hover {
-  background: rgba(0, 0 , 0 , 0.6);
-  color: white;
-}
-
-.admin-box h1 {
-  padding: 40px;
-}
-
-.box1 {
-  background-color: red;
-}
-
-.box2 {
-  background-color: orange;
-}
-
-.box3 {
-  background-color: green;
-}
-
-.box4 {
-  background-color: lightseagreen;
-}
-
-.adminhome::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  background: rgba(0, 0 , 0 , 0.6);
-}
-
-/* profile page */
-
-.profile::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150vh;
-  z-index: 1;
-  background: rgba(0, 0 , 0 , 0.6);
-}
-
-.footer{
-  background:#000;
-  padding:30px 0px;
-  font-family: 'Play', sans-serif;
-  text-align:center;
-  }
-  
-  .footer .row{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:gray;
-  font-size:0.8em;
-  }
-  
-  .footer .row a{
-  text-decoration:none;
-  color:gray;
-  transition:0.5s;
-  }
-  
-  .footer .row a:hover{
-  color:#fff;
-  }
-  
-  .footer .row ul{
-  width:100%;
-  }
-  
-  .footer .row ul li{
-  display:inline-block;
-  margin:0px 30px;
-  }
-  
-  .footer .row a i{
-  font-size:2em;
-  margin:0% 1%;
-  }
-  
-  @media (max-width:720px){
-  .footer{
-  text-align:left;
-  padding:5%;
-  }
-  .footer .row ul li{
-  display:block;
-  margin:10px 0px;
-  text-align:left;
-  }
-  .footer .row a i{
-  margin:0% 3%;
-  }
-  }
-
-  /* admin workout */
-
-  .workoutDetails::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300vh;
-    z-index: 1;
-    background: rgba(0, 0 , 0 , 0.6);
-  }
