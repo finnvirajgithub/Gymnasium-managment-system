@@ -25,6 +25,13 @@ app.set("view engine","hbs");
 app.set("views",templatePaths);
 app.use(express.urlencoded({extended:false}));
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "client", "build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    });
+}
+
 
 // routing
 app.get("/",(req,res) => {
@@ -353,7 +360,7 @@ app.post("/adminTrainer",async (req,res) => {
     res.render("adminTrainer");
 
 });
-
+ 
 //load store items into admin store
 app.get("/adminStore", async (req, res) => {
     try {
