@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //workouts
-const WorkoutSchema = new mongoose.Schema({
+const UpperSchema = new mongoose.Schema({
     title:{
         type:String,
         required:true
@@ -28,6 +28,6 @@ const WorkoutSchema = new mongoose.Schema({
     },
 })
 
-const workoutdb = new mongoose.model("WorkoutCollection",WorkoutSchema)
+const workoutUpperdb = new mongoose.model("WorkoutCollectionUpper",UpperSchema)
 
-module.exports=workoutdb
+module.exports=workoutUpperdb

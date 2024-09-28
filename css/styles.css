@@ -755,6 +755,30 @@ table tr th, td{
   background-color: lightseagreen;
 }
 
+.box01 {
+  background:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihZY1IIdqV09eckkdGqRznIcSOFFv3UaLY87tEhR7PJIebajiU_VgunPnh0Hlm6pvgZZAfDwXwW5fnPWLoWx9QCJ_BgWabu2PN7xAk9W-r7JhFaZtf5bKgBGfA97f6XoEQa_s-wX1hod99hi6AoBW2k2npSasF2w0zKz7C6xhbA22qfAWii_ZH_oET7FU/s800/c.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.box02 {
+  background:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8ak6ouLCOxv3zbeiNSsi_mc2a7jTiZ313wr2HxtbtkcBk13lLh1KhZCE7MNK1kNij16aGnWhdRWlMXp91bsddToFEyxhj6RTPgSk7npw_1UJ3BI6WiG-G6T3dcoZs3Z5yZ63Tcv6XM0Gx2Zf5LhkSpQd4h4PbdoKdcT5VjqzaEoEpDOyuLj0gEYN52Ic/s320/lo.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.box03 {
+  background:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKDHh5eCr9l-a9BEinjGzRSWQMyod0_1HCuVCBxQv_zQ5dzBtxAOzoId1rKr38saObp_EJLdd8roDGNBOhpJx35tn675cqGYMYMRdFQBlEHNhM6BeER8VhoEGc9SPUeelLqAoJmS-_tgeZWGrD1cAaAb3FdQIcKWVvbYBy_-ZB4uYqJAhSBypXpcn-gHg/s320/mu.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.box04 {
+  background:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCgG4HTkO_sbg4YF1Yosp_eyxvlhVPKkFAkMSGcE6CCrpXo1vKveDyjG19rb6fiBRl4DjTQdRzG5xx1srTvFcSLQWuSRWoOdIb9EOmouN9gZ7da7uPH2giHxD19wLfOI6OffTLg8yRolAa4_DmXJXoWdRs0xs0RjtCs9sNoQe_N9ZMdiUclVllDDYAb_o/s320/a.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .adminhome::after {
   content: '';
   position: absolute;
