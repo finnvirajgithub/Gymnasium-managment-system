@@ -12,7 +12,10 @@ const dotenv = require("dotenv");
 const admin = require("./src/admin");
 const userdb = require("./src/users");
 const storedb = require("./src/store");
-const workoutdb = require("./src/workout");
+const workoutUpperdb = require("./src/workoutUpper");
+const workoutLowerdb = require("./src/workoutlower");
+const workoutCardiodb = require("./src/workoutCardio");
+const workoutABSdb = require("./src/workoutABS");
 const trainerdb = require("./src/trainer");
 //load variables 
 dotenv.config();
@@ -118,12 +121,8 @@ app.get("/muscle",(req,res) => {
     res.render("muscle")
 })
 
-app.get("/cardioplanes",(req,res) => {
-    res.render("cardioplanes")
-})
-
-app.get("/abs",(req,res) => {
-    res.render("abs")
+app.get("/adminWorkout",(req,res) => {
+    res.render("adminWorkout")
 })
 
 
@@ -263,10 +262,22 @@ app.get("/customerDetails", async (req, res) => {
 
 //load workout details
 
-app.get("/adminWorkout", async (req, res) => {
+app.get("/adminWorkoutUpper", async (req, res) => {
     try {
-        const workoutcollections = await workoutdb.find({}).exec();
-        res.render("adminWorkout", {
+        const workoutcollectionuppers = await workoutUpperdb.find({}).exec();
+        res.render("adminWorkoutUpper", {
+            workoutList: workoutcollectionuppers  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/adminWorkoutLower", async (req, res) => {
+    try {
+        const workoutcollections = await workoutLowerdb.find({}).exec();
+        res.render("adminWorkoutLower", {
             workoutList: workoutcollections  // Pass retrieved workouts to the template
         });
     } catch (err) {
@@ -275,11 +286,72 @@ app.get("/adminWorkout", async (req, res) => {
     }
 });
 
+app.get("/adminWorkoutCardio", async (req, res) => {
+    try {
+        const workoutcollections = await workoutCardiodb.find({}).exec();
+        res.render("adminWorkoutCardio", {
+            workoutList: workoutcollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/adminWorkoutABS", async (req, res) => {
+    try {
+        const workoutcollections = await workoutABSdb.find({}).exec();
+        res.render("adminWorkoutABS", {
+            workoutList: workoutcollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+//load workout details for user
 app.get("/upper", async (req, res) => {
     try {
-        const workoutcollections = await workoutdb.find({}).exec();
+        const workoutuppercollections = await workoutUpperdb.find({}).exec();
         res.render("upper", {
-            workoutList: workoutcollections  // Pass retrieved workouts to the template
+            workoutList: workoutuppercollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/lower", async (req, res) => {
+    try {
+        const workoutlowercollections = await workoutLowerdb.find({}).exec();
+        res.render("upper", {
+            workoutList: workoutlowercollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/cardioplanes", async (req, res) => {
+    try {
+        const workoutcardiocollections = await workoutCardiodb.find({}).exec();
+        res.render("cardioplanes", {
+            workoutList: workoutcardiocollections  // Pass retrieved workouts to the template
+        });
+    } catch (err) {
+        console.error("Error fetching workout:", err);
+        res.status(500).send("Error fetching workouts");
+    }
+});
+
+app.get("/abs", async (req, res) => {
+    try {
+        const workoutabscollections = await workoutABSdb.find({}).exec();
+        res.render("abs", {
+            workoutList: workoutabscollections  // Pass retrieved workouts to the template
         });
     } catch (err) {
         console.error("Error fetching workout:", err);
@@ -330,7 +402,7 @@ app.post("/adminStore",async (req,res) => {
 });
 
 //code for add workout
-app.post("/adminWorkout",async (req,res) => {
+app.post("/adminWorkoutUpper",async (req,res) => {
     const data2 = {
         title:req.body.title,
         type:req.body.type,
@@ -340,9 +412,57 @@ app.post("/adminWorkout",async (req,res) => {
         image3:req.body.image3,
     }
 
-    const responds = await workoutdb.insertMany(data2);
+    const responds = await workoutUpperdb.insertMany(data2);
     console.log(responds);
-    res.render("adminWorkout");
+    res.render("adminWorkoutUpper");
+
+});
+
+app.post("/adminWorkoutLower",async (req,res) => {
+    const data2 = {
+        title:req.body.title,
+        type:req.body.type,
+        purpose:req.body.purpose,
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+    }
+
+    const responds = await workoutLowerdb.insertMany(data2);
+    console.log(responds);
+    res.render("adminWorkoutLower");
+
+});
+
+app.post("/adminWorkoutCardio",async (req,res) => {
+    const data2 = {
+        title:req.body.title,
+        type:req.body.type,
+        purpose:req.body.purpose,
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+    }
+
+    const responds = await workoutCardiodb.insertMany(data2);
+    console.log(responds);
+    res.render("adminWorkoutCardio");
+
+});
+
+app.post("/adminWorkoutABS",async (req,res) => {
+    const data2 = {
+        title:req.body.title,
+        type:req.body.type,
+        purpose:req.body.purpose,
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+    }
+
+    const responds = await workoutABSdb.insertMany(data2);
+    console.log(responds);
+    res.render("adminWorkoutABS");
 
 });
 

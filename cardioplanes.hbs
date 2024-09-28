@@ -52,21 +52,46 @@
 
 <section class="services">
     <div class="container">
-       <div class="content">
-          <h1>Plank Jacks</h1>
+      {{#each workoutList}}
+        <div class="content">
+          <h1>{{this.title}}</h1>
+         </div>
+    
+         <div class="card__container">
+           <article class="card__article">
+              <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+           </article>
+           <article class="card__article">
+            <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+            </article>
+            <article class="card__article">
+               <img src="{{this.image1}}" alt="image" class="cardio-img">
+
+            </article>
+    
+           
+         </div>
+     {{/each}}
+       
+        
+
+      {{!-- <div class="content">
+          <h1>Bench Press</h1>
          </div>
     
         <div class="card__container">
            <article class="card__article">
-              <img src="/images/excersice/PlankJacks/plankjacks.gif" alt="image" class="cardio-img">
+              <img src="/images/excersice/BenchPress/b.jpg" alt="image" class="cardio-img">
 
            </article>
            <article class="card__article">
-            <img src="/images/excersice/PlankJacks/p1.jpg" alt="image" class="cardio-img">
+            <img src="/images/excersice/BenchPress/b1.jpg" alt="image" class="cardio-img">
 
          </article>
          <article class="card__article">
-            <img src="/images/excersice/PlankJacks/p2.jpg" alt="image" class="cardio-img">
+            <img src="/images/excersice/BenchPress/b.jpg" alt="image" class="cardio-img">
 
          </article>
     
@@ -74,52 +99,28 @@
         </div>
         
 
-
-      <div class="content">
-          <h1>Frog Jumps</h1>
-         </div>
-    
-        <div class="card__container">
-           <article class="card__article">
-              <img src="/images/excersice/FrogJumps/frog.gif" alt="image" class="cardio-img">
-
-           </article>
-           <article class="card__article">
-            <img src="/images/excersice/FrogJumps/f.jpg" alt="image" class="cardio-img">
-
-         </article>
-         <article class="card__article">
-            <img src="/images/excersice/FrogJumps/f1.jpg" alt="image" class="cardio-img">
-
-         </article>
-    
-           
-        </div>
-
-
-
-
                <div class="content">
-                  <h1>Mountain Climbs</h1>
+                  <h1>Alternating Dumbbell Curls</h1>
                  </div>
             
                 <div class="card__container">
                    <article class="card__article">
-                      <img src="/images/excersice/MountainClimbs/mount.gif" alt="image" class="cardio-img">
+                      <img src="/images/excersice/Al/a.jpg" alt="image" class="cardio-img">
         
                    </article>
                    <article class="card__article">
-                    <img src="/images/excersice/MountainClimbs/m1.jpg" alt="image" class="cardio-img">
+                    <img src="/images/excersice/Al/a1.jpg" alt="image" class="cardio-img">
         
                  </article>
                  <article class="card__article">
-                    <img src="/images/excersice/MountainClimbs/m2.jpg" alt="image" class="cardio-img">
+                    <img src="/images/excersice/Al/a.jpg" alt="image" class="cardio-img">
         
                  </article>
             
                    
                 </div>
-     </div>
+        
+     </div> --}}
     
   </section>
   
